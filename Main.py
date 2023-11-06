@@ -4,13 +4,13 @@ def menu(list):
     routine = True
     while routine:
         print("")
-        print("The main menu")
-        print("1 - Print all notes")
-        print("2 - Add note")
-        print("3 - Change note")
-        print("4 - Delete note")
-        print("5 - Exit")
-        command = int(input("Choose number \n"))
+        print("Главное меню")
+        print("1 - Показать все записи")
+        print("2 - Добавить запись")
+        print("3 - Изменить запись")
+        print("4 - Удалить запись")
+        print("5 - Выход")
+        command = int(input("Выберите номер дейстия \n"))
         print("")
         if command == 1:  
             data = read_data()
@@ -29,7 +29,7 @@ def menu(list):
 def add_data(my_list):
     print("(Запись вводится через пробел)")
     
-    my_list.append(input("Enter data \n").split())
+    my_list.append(input("Введите данные \n").split())
     write_data(my_list)  
     menu(my_list)  
 
@@ -37,13 +37,13 @@ def add_data(my_list):
 def change_data(my_list):
     stop = True  
     while stop:
-        edit = int(input("chose record: \n"))  
+        edit = int(input("Выберите запись: \n"))  
         for i in range(len(my_list)):  
             if int(my_list[i][0]) == edit:  
                 
                 my_list.remove(my_list[i])
                
-                my_list.insert(i, input("Enter new data \n").split())
+                my_list.insert(i, input("Ввведите новые данные \n").split())
                 stop = False  
                 break  
             else:
@@ -53,7 +53,7 @@ def change_data(my_list):
 def del_data(my_list):
     stop = True  
     while stop:
-        edit = int(input("chose record for delete: \n"))  
+        edit = int(input("Выберите запись для удаления: \n"))  
         for i in range(len(my_list)):  
             if int(my_list[i][0]) == edit:  
                 my_list.remove(my_list[i])
